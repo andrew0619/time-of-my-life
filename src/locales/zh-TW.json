@@ -1,0 +1,17 @@
+{
+  "title": "時光模擬器",
+  "nameLabel": "您的姓名",
+  "birthDateLabel": "出生日期",
+  "lifeExpectancyLabel": "預期壽命",
+  "yearsOld": "歲",
+  "startButton": "開始模擬",
+  "languageSwitch": "English",
+  "description": "從你出生以來，每一個方形代表了一個月的時光",
+  "days": "天",
+  "months": "月",
+  "years": "年",
+  "timeRemaining": "剩餘時光",
+  "timeElapsed": "已度過時光",
+  "adjust": "調整",
+  "reset": "重設"
+} 

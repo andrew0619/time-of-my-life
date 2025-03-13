@@ -1,0 +1,17 @@
+{
+  "title": "Time Simulator",
+  "nameLabel": "Your Name",
+  "birthDateLabel": "Birth Date",
+  "lifeExpectancyLabel": "Life Expectancy",
+  "yearsOld": "years old",
+  "startButton": "Start Simulation",
+  "languageSwitch": "中文",
+  "description": "Since your birth, each square represents one month of your time",
+  "days": "days",
+  "months": "months",
+  "years": "years",
+  "timeRemaining": "Time Remaining",
+  "timeElapsed": "Time Elapsed",
+  "adjust": "Adjust",
+  "reset": "Reset"
+} 

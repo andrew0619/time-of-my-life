@@ -1,0 +1,26 @@
+{
+  "name": "timeofmylife2",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "時光模擬器 - 以視覺方式呈現人生時間",
+  "dependencies": {
+    "@types/node": "^20.11.27",
+    "@types/react": "^18.2.64",
+    "@types/react-dom": "^18.2.21",
+    "framer-motion": "^11.2.0",
+    "i18next": "^23.10.1",
+    "next": "^14.1.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^14.0.8",
+    "typescript": "^5.4.2"
+  }
+}
