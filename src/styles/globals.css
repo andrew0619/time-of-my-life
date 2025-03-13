@@ -463,4 +463,198 @@ input::placeholder {
 .reset-button:hover {
   color: var(--text-color);
   border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* 新增響應式布局類 */
+.simulation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.canvas-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+/* 調整現有的媒體查詢並添加新的響應式樣式 */
+@media (min-width: 1500px) {
+  .simulation-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .time-info-panel {
+    position: static;
+    transform: none;
+    margin-left: 40px;
+  }
+  
+  .description {
+    position: absolute;
+    top: -100px;
+    right: 0;
+    width: 250px;
+  }
+  
+  .left-controls {
+    position: static;
+    transform: none;
+    margin-right: 40px;
+    align-self: center;
+  }
+}
+
+@media (max-width: 1400px) {
+  .time-info-panel {
+    right: -230px;
+    width: 220px;
+  }
+  
+  .description {
+    right: -230px;
+    width: 220px;
+  }
+  
+  .left-controls {
+    left: -180px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .simulation-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .canvas-container {
+    width: 80vw;
+    height: 80vw;
+    max-width: 500px;
+    max-height: 500px;
+  }
+  
+  .time-info-panel, .description, .left-controls {
+    position: static;
+    transform: none;
+    width: 80vw;
+    max-width: 500px;
+    margin: 15px auto;
+    right: auto;
+    left: auto;
+  }
+  
+  .description {
+    order: -1;
+    margin-bottom: 20px;
+  }
+  
+  .left-controls {
+    margin-top: 20px;
+  }
+  
+  .reset-button {
+    position: static;
+    margin-top: 30px;
+    width: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px 10px;
+  }
+  
+  .controls {
+    width: 90vw;
+    max-width: 380px;
+    padding: 20px;
+  }
+  
+  .canvas-container {
+    width: 90vw;
+    height: 90vw;
+  }
+  
+  .time-info-panel, .description, .left-controls {
+    width: 90vw;
+    padding: 15px;
+  }
+  
+  .language-switch {
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  
+  .time-display-value {
+    font-size: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  
+  .time-unit {
+    font-size: 14px;
+  }
+  
+  .equal-sign {
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 375px) {
+  .time-display-value {
+    font-size: 18px;
+  }
+  
+  .time-unit {
+    font-size: 13px;
+  }
+  
+  .controls {
+    padding: 15px;
+  }
+  
+  h1.serif {
+    font-size: 20px;
+  }
+}
+
+/* 橫屏模式優化 */
+@media (max-height: 600px) and (orientation: landscape) {
+  .container {
+    padding: 10px;
+  }
+  
+  .simulation-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .canvas-container {
+    width: 50vh;
+    height: 50vh;
+  }
+  
+  .time-info-panel, .description, .left-controls {
+    width: 250px;
+    margin: 0;
+  }
+  
+  .reset-button {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
 } 

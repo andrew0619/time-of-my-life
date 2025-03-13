@@ -103,14 +103,14 @@ const TimeCanvas: React.FC<TimeCanvasProps> = ({
   const timeData = daysToMonthsAndYears(elapsedDays);
   
   return (
-    <div className="canvas-container">
+    <div className="canvas-wrapper">
       <AnimatePresence>
         {showDescription && (
           <motion.div 
             className="description serif"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 0.95, x: 0 }}
-            exit={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 0.95, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
             {t('description')}
@@ -118,10 +118,33 @@ const TimeCanvas: React.FC<TimeCanvasProps> = ({
         )}
       </AnimatePresence>
       
+      <div className="canvas-container">
+        <div 
+          style={{ 
+            display: 'flex', 
+            flexWrap: 'wrap',
+            width: '100%',
+            height: '100%',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          {boxes.map(box => (
+            <TimeBox 
+              key={box.id}
+              isFilled={box.isFilled}
+              delay={box.delay}
+              boxSize={boxSize}
+              gap={gap}
+            />
+          ))}
+        </div>
+      </div>
+      
       <motion.div 
         className="time-info-panel"
-        initial={{ opacity: 0, x: 30 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.8 }}
       >
         <motion.div 
@@ -183,7 +206,7 @@ const TimeCanvas: React.FC<TimeCanvasProps> = ({
           animate={{ opacity: 1 }}
           transition={{ delay: 3 }}
         >
-          <div style={{ display: 'flex', alignItems: 'baseline', flexWrap: 'wrap' }}>
+          <div>
             <span className="time-number">
               {Math.max(0, (lifeExpectancy * 365 - elapsedDays)).toLocaleString()}
             </span>
@@ -191,25 +214,6 @@ const TimeCanvas: React.FC<TimeCanvasProps> = ({
           </div>
         </motion.div>
       </motion.div>
-      
-      <div 
-        style={{ 
-          display: 'flex', 
-          flexWrap: 'wrap',
-          width: canvasSize,
-          height: canvasSize,
-        }}
-      >
-        {boxes.map(box => (
-          <TimeBox 
-            key={box.id}
-            isFilled={box.isFilled}
-            delay={box.delay}
-            boxSize={boxSize}
-            gap={gap}
-          />
-        ))}
-      </div>
     </div>
   );
 };

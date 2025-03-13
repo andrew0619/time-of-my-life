@@ -176,7 +176,13 @@ export default function Home() {
           </motion.button>
         </motion.div>
       ) : (
-        <div style={{ display: 'flex', position: 'relative' }}>
+        <div className="simulation-container">
+          <LifeExpectancyAdjuster
+            lifeExpectancy={lifeExpectancy}
+            setLifeExpectancy={setLifeExpectancy}
+            isSimulationStarted={isSimulationStarted}
+          />
+          
           <TimeCanvas
             name={name}
             birthDate={birthDate}
@@ -184,20 +190,8 @@ export default function Home() {
             isSimulationStarted={isSimulationStarted}
           />
           
-          <LifeExpectancyAdjuster
-            lifeExpectancy={lifeExpectancy}
-            setLifeExpectancy={setLifeExpectancy}
-            isSimulationStarted={isSimulationStarted}
-          />
-          
           <motion.button
             onClick={resetSimulation}
-            style={{ 
-              position: 'absolute', 
-              bottom: '-50px', 
-              fontSize: '14px',
-              padding: '8px 20px'
-            }}
             className="reset-button"
             whileHover={{ scale: 1.05, boxShadow: "0 0 15px rgba(255, 255, 255, 0.2)" }}
             whileTap={{ scale: 0.95 }}
